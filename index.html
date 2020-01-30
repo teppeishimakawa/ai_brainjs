@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+<script src="https://unpkg.com/brain.js@2.0.0-alpha.12/dist/brain-browser.min.js"></script> 
+
+<style>
+body { 
+   font-size: 100%;
+   color: #ecf0f1;
+   background: #27ae60;
+}
+#kkaf {
+   font-size: 1.5em;
+   margin: 10px;
+}
+</style>
+
+
+
+  <title>brain.jsテスト（結果）</title>
+
+
+
+
+<style>
+div#footer-fixed
+{
+    position: fixed;            /* フッターの固定 */
+    bottom: 0px;                /* 位置(下0px) */
+    left: 0px;                  /* 位置(左0px) */
+    width: 100%;                /* 横幅100%　*/
+    height: 70px;              /* 縦幅70px */
+}
+
+div#body-bk{
+    padding: 0px 0 80px 0;    /* 下に80pxを余白を取る */
+}
+#out {
+  width: 90%;
+  font-size: 1em; 
+};
+</style>
+
+
+
+</head>
+
+<body>
+     <h1>brain.jsテスト（結果）</h1>
+
+
+<div id="body-bk">
+
+<div id="kkaf">
+<textarea id="out" rows="10">@@@1@@@</textarea>
+</div>
+
+</div>
+
+<div id="footer-fixed">
+
+</div>
+
+<input type="text" id="gann" value="0">
+<input type="text" id="iryoo" value="0">
+<button id="btn" style="width:100px;padding:10px;font-size:10px;">calc</button>
+
+<script>
+var g;
+var i;
+
+
+var outxxx = '結果:\n';
+var net = new brain.NeuralNetwork();
+// 学習処理
+net.train([{input: { gan: 0.621, iryo: 0.7175 }, output: { ben: 0.65 }},
+{input: { gan: 0.79, iryo: 0.8175 }, output: { ben: 0.626 }},
+{input: { gan: 0.7185, iryo: 0.6575 }, output: { ben: 0.691 }},
+{input: { gan: 0.72025, iryo: 0.8475 }, output: { ben: 0.636 }},
+{input: { gan: 0.53025, iryo: 0.7775 }, output: { ben: 0.242 }},
+{input: { gan: 0.82925, iryo: 0.7175 }, output: { ben: 0.545 }},
+{input: { gan: 0.73525, iryo: 0.7075 }, output: { ben: 0.734 }},
+{input: { gan: 0.787, iryo: 0.8325 }, output: { ben: 0.584 }},
+{input: { gan: 0.69775, iryo: 0.72 }, output: { ben: 0.63 }},
+{input: { gan: 0.73075, iryo: 0.79 }, output: { ben: 0.654 }},
+{input: { gan: 0.7315, iryo: 0.885 }, output: { ben: 0.615 }},
+{input: { gan: 0.7475, iryo: 0.7325 }, output: { ben: 0.714 }},
+{input: { gan: 0.723, iryo: 0.86 }, output: { ben: 0.671 }},
+{input: { gan: 0.7755, iryo: 0.855 }, output: { ben: 0.685 }},
+{input: { gan: 0.85125, iryo: 0.9475 }, output: { ben: 0.482 }},
+{input: { gan: 0.82075, iryo: 0.86 }, output: { ben: 0.598 }},
+{input: { gan: 0.6265, iryo: 0.62 }, output: { ben: 0.657 }},
+{input: { gan: 0.71325, iryo: 0.69 }, output: { ben: 0.69 }},
+{input: { gan: 0.87975, iryo: 0.7425 }, output: { ben: 0.686 }},
+{input: { gan: 0.8815, iryo: 0.8675 }, output: { ben: 0.597 }},
+{input: { gan: 0.7365, iryo: 0.6975 }, output: { ben: 0.675 }},
+{input: { gan: 0.6275, iryo: 0.6875 }, output: { ben: 0.778 }},
+{input: { gan: 0.81425, iryo: 0.8775 }, output: { ben: 0.568 }},
+{input: { gan: 0.97925, iryo: 0.7875 }, output: { ben: 0.645 }},
+{input: { gan: 0.845, iryo: 0.6975 }, output: { ben: 0.722 }},
+{input: { gan: 0.61975, iryo: 0.6775 }, output: { ben: 0.632 }},
+{input: { gan: 0.92275, iryo: 0.7425 }, output: { ben: 0.565 }},
+{input: { gan: 0.70575, iryo: 0.6925 }, output: { ben: 0.659 }},
+{input: { gan: 0.73675, iryo: 0.815 }, output: { ben: 0.7 }},
+{input: { gan: 0.6475, iryo: 0.655 }, output: { ben: 0.668 }},
+{input: { gan: 0.72125, iryo: 0.85 }, output: { ben: 0.628 }},
+{input: { gan: 0.76225, iryo: 0.8925 }, output: { ben: 0.596 }},
+{input: { gan: 0.88125, iryo: 0.885 }, output: { ben: 0.504 }},
+{input: { gan: 0.7245, iryo: 0.71 }, output: { ben: 0.695 }},
+{input: { gan: 0.87575, iryo: 0.8225 }, output: { ben: 0.633 }},
+{input: { gan: 0.9125, iryo: 0.795 }, output: { ben: 0.612 }},
+{input: { gan: 0.62675, iryo: 0.8175 }, output: { ben: 0.597 }},
+{input: { gan: 0.80575, iryo: 0.88 }, output: { ben: 0.689 }},
+{input: { gan: 0.7085, iryo: 0.71 }, output: { ben: 0.702 }},
+{input: { gan: 0.75225, iryo: 0.7275 }, output: { ben: 0.709 }},
+{input: { gan: 0.81725, iryo: 0.745 }, output: { ben: 0.758 }},
+{input: { gan: 0.73075, iryo: 0.7525 }, output: { ben: 0.749 }}]);
+// テスト開始
+var input = { gan: 0.75, iryo: 0.92 };
+var output = net.run(input);  
+console.log(output);
+outxxx = outxxx+"----------\n";
+outxxx = outxxx+"inp:"+JSON.stringify(input)+"\n";
+outxxx = outxxx+"out:"+JSON.stringify(output)+"\n";
+var input = { gan: 0.79, iryo: 0.71 };
+var output = net.run(input);  
+console.log(output);
+outxxx = outxxx+"----------\n";
+outxxx = outxxx+"inp:"+JSON.stringify(input)+"\n";
+outxxx = outxxx+"out:"+JSON.stringify(output)+"\n";
+var input = { gan: 0.73, iryo: 0.77 };
+var output = net.run(input);  
+console.log(output);
+outxxx = outxxx+"----------\n";
+outxxx = outxxx+"inp:"+JSON.stringify(input)+"\n";
+outxxx = outxxx+"out:"+JSON.stringify(output)+"\n";
+var input = { gan: 0.85, iryo: 0.90 };
+var output = net.run(input);  
+console.log(output);
+outxxx = outxxx+"----------\n";
+outxxx = outxxx+"inp:"+JSON.stringify(input)+"\n";
+outxxx = outxxx+"out:"+JSON.stringify(output)+"\n";
+var input = { gan: 0.88, iryo: 0.81 };
+var output = net.run(input);  
+console.log(output);
+outxxx = outxxx+"----------\n";
+outxxx = outxxx+"inp:"+JSON.stringify(input)+"\n";
+outxxx = outxxx+"out:"+JSON.stringify(output)+"\n";
+// テスト結果をテキストエリアへ
+
+
+document.getElementById("gann").onchange=function()
+{
+g=Object.assign(parseFloat(document.getElementById("gann").value));
+//console.log(g);
+}
+
+document.getElementById("iryoo").onchange=function()
+{
+i=Object.assign(parseFloat(document.getElementById("iryoo").value));
+//console.log(i);
+}
+
+
+
+document.getElementById('btn').onclick=function()
+{
+
+var input = { gan: g , iryo: i  };
+var output = net.run(input);
+console.log(output);
+outxxx = outxxx+"----------\n";
+outxxx = outxxx+"inp:"+JSON.stringify(input)+"\n";
+outxxx = outxxx+"out:"+JSON.stringify(output)+"\n";
+
+document.getElementById('out').innerHTML=outxxx;
+console.log(g);
+console.log(i);
+}
+
+</script>
+
+
+</body>
+
+
+
+
+
+</html>

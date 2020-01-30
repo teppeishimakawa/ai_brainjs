@@ -1,0 +1,6 @@
+[{input:{mail:1,age:0.144,marry:0},output:{mon:1}},
+	{input:{mail:1,age:0.142,marry:0},output:{thu:1}},
+	{input:{mail:1,age:0.442,marry:0},output:{tue:1}},
+	{input:{mail:1,age:0.142,marry:0},output:{mon:1}}]
+
+
